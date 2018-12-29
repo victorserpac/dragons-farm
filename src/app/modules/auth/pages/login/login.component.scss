@@ -1,0 +1,67 @@
+.login-page {
+  display: flex;
+  min-height: 100vh;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  > .dragon,
+  > .login-container {
+    @media (min-width: 701px) {
+      flex: 0 1 50%;
+    }
+  }
+
+  > .dragon {
+    background-image: url(../../../../../assets/images/login-dragon.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.login-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > .intro {
+    text-align: center;
+
+    > .mascot {
+      width: 11.6%;
+      min-width: 60px;
+      margin-bottom: 2rem;
+    }
+
+    > .title {
+      font-family: 'SF Pro Display', sans-serif;
+      font-weight: 500;
+      font-size: 2rem;
+      color: #222731;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    > .signup {
+      color: #999999;
+      margin-bottom: 2rem;
+
+      > span {
+        color: #222731;
+      }
+    }
+  }
+
+  > .form {
+    width: 62.5%;
+    min-width: 260px;
+    margin: 0 auto;
+
+    > .dragon-button {
+      margin-top: 1rem;
+    }
+  }
+}
