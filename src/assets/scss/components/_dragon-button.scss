@@ -11,11 +11,17 @@
   outline: none;
   transition: box-shadow 0.3s ease-in-out;
 
-  &:focus {
-    border: solid 1px #009EFD;
+  &:disabled {
+    opacity: 0.5;
   }
 
-  &:hover {
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  &:not(:disabled) {
+    &:focus {
+      border: solid 1px #009EFD;
+    }
+
+    &:hover {
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
   }
 }
