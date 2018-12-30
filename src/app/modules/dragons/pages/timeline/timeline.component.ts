@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
 
+  public dragon = {
+    slug: 'foobar',
+    name: 'Foobar',
+  }
+
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +19,14 @@ export class TimelineComponent implements OnInit {
 
   newDragon() {
     
+  }
+
+  view() {
+    console.log('ate');
+  }
+
+  edit() {
+    console.log('teste');
   }
 
 }
