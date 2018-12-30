@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './modules/auth/auth.module';
+import { DragonsModule } from './modules/dragons/dragons.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AuthModule } from './modules/auth/auth.module';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    DragonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
