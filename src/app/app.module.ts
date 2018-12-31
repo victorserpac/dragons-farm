@@ -14,7 +14,7 @@ import { DragonsModule } from './modules/dragons/dragons.module';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    DragonsModule
+    DragonsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

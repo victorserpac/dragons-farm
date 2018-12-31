@@ -4,27 +4,12 @@
   <div class="container">
     <div class="header">
       <h1 class="title">Dragões Cadastrados</h1>
-      <div class="counter">110</div>
-    </div>
+      <div class="counter">{{dragons.length}}</div>
+    </div> 
 
     <ul class="list">
-      <li class="item">
-        <app-dragon [dragon]="dragon" (onView)="view()" (onEdit)="edit()"></app-dragon>
-      </li>
-      <li class="item">
-        <app-dragon [dragon]="dragon" (onView)="view()" (onEdit)="edit()"></app-dragon>
-      </li>
-      <li class="item">
-        <app-dragon [dragon]="dragon" (onView)="view()" (onEdit)="edit()"></app-dragon>
-      </li>
-      <li class="item">
-        <app-dragon [dragon]="dragon" (onView)="view()" (onEdit)="edit()"></app-dragon>
-      </li>
-      <li class="item">
-        <app-dragon [dragon]="dragon" (onView)="view()" (onEdit)="edit()"></app-dragon>
-      </li>
-      <li class="item">
-        <app-dragon [dragon]="dragon" (onView)="view()" (onEdit)="edit()"></app-dragon>
+      <li class="item" *ngFor="let dragon of dragons | orderBy: 'name'">
+        <app-dragon [dragon]="dragon" (onView)="view($event)" (onEdit)="edit($event)"></app-dragon>
       </li>
     </ul>
   </div>

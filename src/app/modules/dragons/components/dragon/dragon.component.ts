@@ -14,14 +14,14 @@ export class DragonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.dragon.created_at);
   }
 
   view() {
-    this.onView.emit();
+    this.onView.emit(this.dragon.slug);
   }
 
   edit() {
-    this.onEdit.emit();
+    this.onEdit.emit(this.dragon.slug);
   }
-
 }
