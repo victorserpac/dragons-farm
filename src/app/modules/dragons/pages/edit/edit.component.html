@@ -1,0 +1,36 @@
+<app-modal (onClose)="back()" [title]="'Editar dados do dragão'">
+  <div class="view" *ngIf="!isLoading">
+    <div class="scenario">
+      <img class="habitat" src="../../../../../assets/images/habitat.png">
+      <img class="dragon" src="../../../../../assets/images/dragon-level-2.png">
+    </div>
+    <form class="form" #form="ngForm" (ngSubmit)="update(form)">
+      <div class="form-field">
+        <label class="label" for="name">Nome</label>
+        <p class="control">
+          <input type="text" class="input" name="name" id="name" required [(ngModel)]="dragon.name">
+        </p>
+      </div>
+  
+      <div class="form-field">
+        <label class="label" for="type">Tipo</label>
+        <p class="control">
+          <input type="text" class="input" name="type" id="type" required [(ngModel)]="dragon.type">
+        </p>
+      </div>
+
+      <div class="action">
+        <button class="delete" type="button" (click)="delete(dragon.slug)">
+          <i class="icon">
+            <svg icon type="trash" class="trash"></svg>
+          </i>
+          <div class="text">
+            <span>Excluir</span>
+            <span>dragão</span>
+          </div>
+        </button>
+        <button class="dragon-button" type="submit" [disabled]="form.invalid">Salvar</button>
+      </div>
+    </form>
+  </div>
+</app-modal>
