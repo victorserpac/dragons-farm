@@ -5,6 +5,7 @@ import { CreateComponent } from './pages/create/create.component';
 import { CreateSuccessComponent } from './pages/create-success/create-success.component';
 import { ViewComponent } from './pages/view/view.component';
 import { EditComponent } from './pages/edit/edit.component';
+import { UpdateSuccessComponent } from './pages/update-success/update-success.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
   {
     path: 'edit/:slug',
     component: EditComponent,
+    outlet: 'action',
+  },
+  {
+    path: 'update-success',
+    component: UpdateSuccessComponent,
     outlet: 'action',
   },
 ];

@@ -11,6 +11,7 @@ import { CreateComponent } from './pages/create/create.component';
 import { CreateSuccessComponent } from './pages/create-success/create-success.component';
 import { ViewComponent } from './pages/view/view.component';
 import { EditComponent } from './pages/edit/edit.component';
+import { UpdateSuccessComponent } from './pages/update-success/update-success.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EditComponent } from './pages/edit/edit.component';
     CreateSuccessComponent,
     ViewComponent,
     EditComponent,
+    UpdateSuccessComponent,
   ],
   imports: [
     CommonModule,
