@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { AuthGuard } from 'src/app/core/guards';
 import { TimelineComponent } from './pages/timeline/timeline.component';
 import { CreateComponent } from './pages/create/create.component';
 import { CreateSuccessComponent } from './pages/create-success/create-success.component';
@@ -13,41 +15,49 @@ const routes: Routes = [
   {
     path: 'timeline',
     component: TimelineComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'create',
     component: CreateComponent,
     outlet: 'action',
+    canActivate: [AuthGuard],
   },
   {
     path: 'create-success',
     component: CreateSuccessComponent,
     outlet: 'action',
+    canActivate: [AuthGuard],
   },
   {
     path: 'view/:slug',
     component: ViewComponent,
     outlet: 'action',
+    canActivate: [AuthGuard],
   },
   {
     path: 'edit/:slug',
     component: EditComponent,
     outlet: 'action',
+    canActivate: [AuthGuard],
   },
   {
     path: 'update-success',
     component: UpdateSuccessComponent,
     outlet: 'action',
+    canActivate: [AuthGuard],
   },
   {
     path: 'delete/:slug',
     component: DeleteComponent,
     outlet: 'action',
+    canActivate: [AuthGuard],
   },
   {
     path: 'delete-success',
     component: DeleteSuccessComponent,
     outlet: 'action',
+    canActivate: [AuthGuard],
   },
 ];
 

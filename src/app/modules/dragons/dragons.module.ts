@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { OrderModule } from 'ngx-order-pipe';
 import { FormsModule } from '@angular/forms';
 
+import { SharedModule } from '../../shared/shared.module';
+import { AuthGuard } from '../../core/guards';
 import { DragonsRoutes } from './dragons.routes';
 import { TimelineComponent } from './pages/timeline/timeline.component';
-import { SharedModule } from '../../shared/shared.module';
 import { DragonComponent } from './components/dragon/dragon.component';
 import { CreateComponent } from './pages/create/create.component';
 import { CreateSuccessComponent } from './pages/create-success/create-success.component';
@@ -34,5 +35,8 @@ import { DeleteSuccessComponent } from './pages/delete-success/delete-success.co
     OrderModule,
     FormsModule,
   ],
+  providers: [
+    AuthGuard,
+  ]
 })
 export class DragonsModule { }

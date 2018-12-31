@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Response } from '../../../../core/models';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   public hasError: boolean = false;
   public errorMessage: string;
 
@@ -18,6 +18,12 @@ export class LoginComponent {
     private authService: AuthService,
     private router: Router,
   ) {}
+
+  ngOnInit() {
+    if (this.authService.isAuthenticated()) {
+      this.router.navigateByUrl('/timeline');
+    }
+  }
 
   submit(login: NgForm) {
     this.authService

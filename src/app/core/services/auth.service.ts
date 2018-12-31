@@ -13,7 +13,7 @@ const LOGIN = {
 })
 export class AuthService {
 
-  isAuthenticated(): boolean {
+  public isAuthenticated(): boolean {
     return !!localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
   }  
 
