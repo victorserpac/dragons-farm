@@ -9,7 +9,7 @@ import { ApiDragonsList, NewDragon } from '../models';
 export class DragonService {
   private url: string = 'https://dragons-api.herokuapp.com/api/dragons';
 
-  list(page: number = 0) {
+  public list(page: number = 0) {
     const config = {
       params: {
         page,
@@ -36,7 +36,11 @@ export class DragonService {
       }));
   }
 
-  create(dragon: NewDragon) {
-    return axios.post(this.url, dragon);
+  public create(dragon: NewDragon) {
+    return axios.post(this.url, dragon).then(({ data }) => data);
+  }
+
+  public get(slug: string) {
+    return axios.get(`${this.url}/${slug}`).then(({ data }) => data);
   }
 }

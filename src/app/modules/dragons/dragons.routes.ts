@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TimelineComponent } from './pages/timeline/timeline.component';
 import { CreateComponent } from './pages/create/create.component';
 import { CreateSuccessComponent } from './pages/create-success/create-success.component';
+import { ViewComponent } from './pages/view/view.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
   {
     path: 'create-success',
     component: CreateSuccessComponent,
+    outlet: 'action',
+  },
+  {
+    path: 'view/:slug',
+    component: ViewComponent,
     outlet: 'action',
   }
 ];
