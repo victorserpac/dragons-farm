@@ -1,0 +1,19 @@
+<app-modal (onClose)="back()" [title]="'Cadastro de novo dragão'">
+  <form class="form" #form="ngForm" (ngSubmit)="create(form)">
+    <div class="form-field">
+      <label class="label" for="name">Nome</label>
+      <p class="control">
+        <input type="text" class="input" name="name" id="name" required ngModel>
+      </p>
+    </div>
+
+    <div class="form-field">
+      <label class="label" for="type">Tipo</label>
+      <p class="control">
+        <input type="text" class="input" name="type" id="type" required ngModel>
+      </p>
+    </div>
+
+    <button class="dragon-button" type="submit" [disabled]="form.invalid">Cadastrar</button>
+  </form>
+</app-modal>

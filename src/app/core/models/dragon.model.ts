@@ -6,3 +6,8 @@ export interface Dragon {
   slug: string,
   histories: Array<string>,
 };
+
+export interface NewDragon {
+  name: string,
+  type: string,
+};
