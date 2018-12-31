@@ -13,6 +13,7 @@ import { ViewComponent } from './pages/view/view.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { UpdateSuccessComponent } from './pages/update-success/update-success.component';
 import { DeleteComponent } from './pages/delete/delete.component';
+import { DeleteSuccessComponent } from './pages/delete-success/delete-success.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DeleteComponent } from './pages/delete/delete.component';
     EditComponent,
     UpdateSuccessComponent,
     DeleteComponent,
+    DeleteSuccessComponent,
   ],
   imports: [
     CommonModule,
