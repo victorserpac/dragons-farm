@@ -32,47 +32,45 @@
     display: block;
     padding: 1.5rem 2rem;
 
-    > .header {
+    > .title {
+      font-family: 'SF Pro Text', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding-bottom: 0.2rem;
       border-bottom: solid 1px #d5d5d5;
       margin-right: 2rem;
+    }    
+    
+    > .close {
+      width: 28px;
+      height: 28px;
+      border: solid 2px #11C0D6;
+      border-radius: 50%;
+      background: 0;
+      outline: 0;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
 
-      > .title {
-        font-family: 'SF Pro Text', sans-serif;
-        font-size: 1.2rem;
-        padding-bottom: 0.2rem;
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 3px;
+        border-radius: 2px;
+        background: #37d7c9;
       }
 
-      > .close {
-        width: 28px;
-        height: 28px;
-        border: solid 2px #11C0D6;
-        border-radius: 50%;
-        background: 0;
-        outline: 0;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-  
-        &::before,
-        &::after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 50%;
-          height: 3px;
-          border-radius: 2px;
-          background: #37d7c9;
-        }
-  
-        &::before {
-          transform: translate3d(-50%, -50%, 0) rotate(45deg);
-        }
-  
-        &::after {
-          transform: translate3d(-50%, -50%, 0) rotate(-45deg);
-        }
+      &::before {
+        transform: translate3d(-50%, -50%, 0) rotate(45deg);
+      }
+
+      &::after {
+        transform: translate3d(-50%, -50%, 0) rotate(-45deg);
       }
     }
   }

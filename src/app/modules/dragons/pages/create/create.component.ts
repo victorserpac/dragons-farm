@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DragonService } from 'src/app/core/services/dragon.service';
+import { EventService } from 'src/app/core/services';
 
 @Component({
   selector: 'app-create',
@@ -9,32 +10,28 @@ import { DragonService } from 'src/app/core/services/dragon.service';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-
   constructor(
     private dragonService: DragonService,
     private router: Router,
+    private eventService: EventService,
   ) { }
 
   ngOnInit() {
-    console.log(this.dragonService);
-    
   }
 
-  back() {    
+  back() {
     this.router.navigate([{ outlets: { action: null } }]);
   }
 
   create(form: NgForm): void {
-    console.log(this.dragonService);
-    
-    // this.dragonService.create(form.value)
-      // .then(() => {
-      //   console.log('criado');
-        
-      // })
-      // .catch((error) => {
-      //   console.log(error);
-      // })
+    this.dragonService.create(form.value)
+      .then(() => {
+        this.eventService.BroadcastEvent('LIST_DRAGONS');
+        this.router.navigate([{ outlets: { action: 'create-success' } }]);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 
 }
