@@ -39,6 +39,11 @@
     right: 0;
     top: 0;
 
+    @media (max-width: 380px) {
+      right: 5%;
+      top: 5%;
+    }
+
     > .action {
       position: absolute;
       width: 32px;
