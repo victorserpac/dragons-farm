@@ -4,6 +4,7 @@ import { TimelineComponent } from './pages/timeline/timeline.component';
 import { CreateComponent } from './pages/create/create.component';
 import { CreateSuccessComponent } from './pages/create-success/create-success.component';
 import { ViewComponent } from './pages/view/view.component';
+import { EditComponent } from './pages/edit/edit.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,12 @@ const routes: Routes = [
     path: 'view/:slug',
     component: ViewComponent,
     outlet: 'action',
-  }
+  },
+  {
+    path: 'edit/:slug',
+    component: EditComponent,
+    outlet: 'action',
+  },
 ];
 
 @NgModule({

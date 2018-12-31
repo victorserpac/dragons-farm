@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 
-import { ApiDragonsList, NewDragon } from '../models';
+import { ApiDragonsList, NewDragon, Dragon } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +42,9 @@ export class DragonService {
 
   public get(slug: string) {
     return axios.get(`${this.url}/${slug}`).then(({ data }) => data);
+  }
+
+  public update(dragon: Dragon) {
+    return axios.put(`${this.url}/${dragon.slug}`, dragon).then(({ data }) => data);
   }
 }

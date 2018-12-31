@@ -42,7 +42,7 @@ export class TimelineComponent implements OnInit {
   }
 
   edit(slug: string) {
-    console.log(slug);
+    this.router.navigate([{ outlets: { action: ['edit', slug] } }])
   }
 
 }

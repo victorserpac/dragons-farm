@@ -10,6 +10,7 @@ import { DragonComponent } from './components/dragon/dragon.component';
 import { CreateComponent } from './pages/create/create.component';
 import { CreateSuccessComponent } from './pages/create-success/create-success.component';
 import { ViewComponent } from './pages/view/view.component';
+import { EditComponent } from './pages/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ViewComponent } from './pages/view/view.component';
     CreateComponent,
     CreateSuccessComponent,
     ViewComponent,
+    EditComponent,
   ],
   imports: [
     CommonModule,
