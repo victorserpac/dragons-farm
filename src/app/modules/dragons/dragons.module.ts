@@ -9,6 +9,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { DragonComponent } from './components/dragon/dragon.component';
 import { CreateComponent } from './pages/create/create.component';
 import { CreateSuccessComponent } from './pages/create-success/create-success.component';
+import { ViewComponent } from './pages/view/view.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CreateSuccessComponent } from './pages/create-success/create-success.co
     DragonComponent,
     CreateComponent,
     CreateSuccessComponent,
+    ViewComponent,
   ],
   imports: [
     CommonModule,
