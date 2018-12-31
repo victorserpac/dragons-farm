@@ -16,8 +16,6 @@ export class CreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.dragonService);
-    
   }
 
   back() {    
@@ -25,16 +23,13 @@ export class CreateComponent implements OnInit {
   }
 
   create(form: NgForm): void {
-    console.log(this.dragonService);
-    
-    // this.dragonService.create(form.value)
-      // .then(() => {
-      //   console.log('criado');
-        
-      // })
-      // .catch((error) => {
-      //   console.log(error);
-      // })
+    this.dragonService.create(form.value)
+      .then(() => {
+        this.router.navigate([{ outlets: { action: 'created' } }]);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 
 }
