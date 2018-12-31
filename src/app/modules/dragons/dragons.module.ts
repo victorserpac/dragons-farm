@@ -8,9 +8,15 @@ import { TimelineComponent } from './pages/timeline/timeline.component';
 import { SharedModule } from '../../shared/shared.module';
 import { DragonComponent } from './components/dragon/dragon.component';
 import { CreateComponent } from './pages/create/create.component';
+import { CreateSuccessComponent } from './pages/create-success/create-success.component';
 
 @NgModule({
-  declarations: [TimelineComponent, DragonComponent, CreateComponent],
+  declarations: [
+    TimelineComponent,
+    DragonComponent,
+    CreateComponent,
+    CreateSuccessComponent,
+  ],
   imports: [
     CommonModule,
     DragonsRoutes,
