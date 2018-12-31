@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DragonService } from 'src/app/core/services/dragon.service';
 import { ApiDragonsList, Dragon } from 'src/app/core/models';
 
@@ -12,6 +13,7 @@ export class TimelineComponent implements OnInit {
 
   constructor(
     private dragonService: DragonService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class TimelineComponent implements OnInit {
   }
 
   newDragon() {
+    this.router.navigate([{ outlets: { action: 'create' } }])
     console.log('new dragon');
   }
 

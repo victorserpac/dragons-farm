@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 
-import { ApiDragonsList } from '../models';
+import { ApiDragonsList, NewDragon } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -35,8 +35,8 @@ export class DragonService {
         _metadata: response._metadata,
       }));
   }
+
+  create(dragon: NewDragon) {
+    return axios.post(this.url, dragon);
+  }
 }
-
-10
-
-59
