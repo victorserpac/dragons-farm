@@ -1,0 +1,71 @@
+
+
+.dragons-timeline {
+  background: #222731;
+  min-height: 100vh;
+
+  > .container {
+    margin-top: 4rem;
+
+    > .header {
+      border-bottom: solid 1px #546174;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+
+      > .title {
+        font-family: 'SF Pro Display', sans-serif;
+        font-weight: 500;
+        color: #FFFFFF;
+        font-size: 2rem;
+
+        @media (max-width: 380px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      > .counter {
+        border: solid 1px #12B6CC;
+        padding: 6px 15px;
+        border-radius: 50px;
+        color: #FFFFFF;
+        font-size: 1.2rem;
+
+        @media (max-width: 380px) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    > .list {
+      display: flex;
+      margin: 0 -1rem;
+      flex-wrap: wrap;
+      padding-top: 2rem;
+
+      > .item {
+        padding: 1rem;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 20%;
+
+        @media (max-width: 940px) {
+          flex-basis: 25%;
+        }
+
+        @media (max-width: 740px) {
+          flex-basis: 33.33%;
+        }
+
+        @media (max-width: 540px) {
+          flex-basis: 50%;
+        }
+
+        @media (max-width: 380px) {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+}
