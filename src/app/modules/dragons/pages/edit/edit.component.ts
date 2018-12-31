@@ -54,6 +54,10 @@ export class EditComponent implements OnInit, OnDestroy {
       });
   }
 
+  public delete(slug: string): void {
+    this.router.navigate([{ outlets: { action: ['delete', slug] } }])
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

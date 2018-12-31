@@ -1,0 +1,16 @@
+<app-modal (onClose)="back()">
+  <div class="delete">
+    <svg icon type="warning" class="icon"></svg>
+    <p class="description">Você tem certeza que deseja <span class="highlight">excluir</span> o dragão?</p>
+    <div class="actions">
+      <button class="dragon-button" type="button"
+        (click)="cancel()">
+        Não, desejo manter meu dragão
+      </button>
+      <button class="dragon-button -outlined" type="button"
+        (click)="confirm()">
+        Sim, desejo excluir o dragão
+      </button>
+    </div>
+  </div>
+</app-modal>

@@ -11,6 +11,12 @@
   outline: none;
   transition: box-shadow 0.3s ease-in-out;
 
+  &.-outlined {
+    background: none;
+    border: solid 1px #1EDDB3;
+    color: #0DB8DF;
+  }
+
   &:disabled {
     opacity: 0.5;
   }

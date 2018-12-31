@@ -6,6 +6,7 @@ import { CreateSuccessComponent } from './pages/create-success/create-success.co
 import { ViewComponent } from './pages/view/view.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { UpdateSuccessComponent } from './pages/update-success/update-success.component';
+import { DeleteComponent } from './pages/delete/delete.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,11 @@ const routes: Routes = [
   {
     path: 'update-success',
     component: UpdateSuccessComponent,
+    outlet: 'action',
+  },
+  {
+    path: 'delete/:slug',
+    component: DeleteComponent,
     outlet: 'action',
   },
 ];

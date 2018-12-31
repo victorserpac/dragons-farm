@@ -45,6 +45,10 @@ export class DragonService {
   }
 
   public update(dragon: Dragon) {
-    return axios.put(`${this.url}/${dragon.slug}`, dragon).then(({ data }) => data);
+    return axios.put(`${this.url}/${dragon.slug}`, dragon);
+  }
+
+  public delete(slug: string) {
+    return axios.delete(`${this.url}/${slug}`);
   }
 }

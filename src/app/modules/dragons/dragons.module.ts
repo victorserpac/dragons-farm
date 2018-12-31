@@ -12,6 +12,7 @@ import { CreateSuccessComponent } from './pages/create-success/create-success.co
 import { ViewComponent } from './pages/view/view.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { UpdateSuccessComponent } from './pages/update-success/update-success.component';
+import { DeleteComponent } from './pages/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UpdateSuccessComponent } from './pages/update-success/update-success.co
     ViewComponent,
     EditComponent,
     UpdateSuccessComponent,
+    DeleteComponent,
   ],
   imports: [
     CommonModule,
