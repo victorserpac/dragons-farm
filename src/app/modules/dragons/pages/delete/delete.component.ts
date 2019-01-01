@@ -11,6 +11,7 @@ import { DragonService, EventService } from 'src/app/core/services';
 export class DeleteComponent implements OnInit, OnDestroy {
   private subscription;
   private slug: string;
+  public isLoading: boolean = false;
 
   constructor(
     private router: Router,
@@ -34,6 +35,7 @@ export class DeleteComponent implements OnInit, OnDestroy {
   }
 
   public confirm(): void {
+    this.isLoading = true;
     this.dragonService.delete(this.slug)
       .then(() => {
         this.eventService.BroadcastEvent('LIST_DRAGONS');
@@ -42,6 +44,7 @@ export class DeleteComponent implements OnInit, OnDestroy {
       .catch((error) => {
         console.log(error);
       })
+      .finally(() => (this.isLoading = false));
   }
 
   ngOnDestroy() {

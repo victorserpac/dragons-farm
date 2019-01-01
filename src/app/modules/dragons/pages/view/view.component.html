@@ -1,4 +1,5 @@
 <app-modal (onClose)="back()" [title]="'Dados do dragão'">
+  <app-loading *ngIf="isLoading"></app-loading>
   <div class="view" *ngIf="!isLoading">
     <div class="scenario">
       <img class="habitat" src="../../../../../assets/images/habitat.png">

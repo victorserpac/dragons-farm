@@ -14,6 +14,10 @@
       </p>
     </div>
 
-    <button class="dragon-button" type="submit" [disabled]="form.invalid">Cadastrar</button>
+    <button class="dragon-button" type="submit"
+      [disabled]="form.invalid"
+      [ngClass]="{'-loading': isLoading}">
+      Cadastrar
+    </button>
   </form>
 </app-modal>

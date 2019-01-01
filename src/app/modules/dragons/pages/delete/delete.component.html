@@ -8,7 +8,8 @@
         Não, desejo manter meu dragão
       </button>
       <button class="dragon-button -outlined" type="button"
-        (click)="confirm()">
+        (click)="confirm()"
+        [ngClass]="{'-loading': isLoading}">
         Sim, desejo excluir o dragão
       </button>
     </div>

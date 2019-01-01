@@ -11,6 +11,7 @@ import { EventService } from 'src/app/core/services';
 })
 export class TimelineComponent implements OnInit {
   public dragons: Array<Dragon> = [];  
+  public isLoading: boolean = false;
 
   constructor(
     private dragonService: DragonService,
@@ -26,10 +27,12 @@ export class TimelineComponent implements OnInit {
   }
 
   listDragons(page: number = undefined): void {
+    this.isLoading = true;
     this.dragonService.list(page)
       .then((response: ApiDragonsList) => {
         this.dragons = response.items;
-      });
+      })
+      .finally(() => (this.isLoading = false))
   }
 
   newDragon() {

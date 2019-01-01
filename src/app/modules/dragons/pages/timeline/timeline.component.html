@@ -7,6 +7,8 @@
       <div class="counter">{{dragons.length}}</div>
     </div> 
 
+    <app-loading *ngIf="isLoading"></app-loading>
+    
     <ul class="list">
       <li class="item" *ngFor="let dragon of dragons | orderBy: 'name' : caseInsensitive: true">
         <app-dragon [dragon]="dragon" (onView)="view($event)" (onEdit)="edit($event)"></app-dragon>

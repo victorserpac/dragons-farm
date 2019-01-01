@@ -14,6 +14,7 @@ export class EditComponent implements OnInit, OnDestroy {
   private subscription;
   public dragon: Dragon;
   public isLoading: boolean;
+  public isUpdating: boolean = false;
   public level: string;
 
   constructor(
@@ -49,6 +50,7 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   public update() {
+    this.isUpdating = true;
     this.dragonService.update(this.dragon)
       .then(() => {
         this.eventService.BroadcastEvent('LIST_DRAGONS');
@@ -56,7 +58,8 @@ export class EditComponent implements OnInit, OnDestroy {
       })
       .catch((error) => {
         console.log(error);
-      });
+      })
+      .finally(() => (this.isUpdating = true));
   }
 
   public delete(slug: string): void {

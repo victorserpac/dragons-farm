@@ -10,11 +10,38 @@
   width: 100%;
   outline: none;
   transition: box-shadow 0.3s ease-in-out;
+  position: relative;
 
   &.-outlined {
     background: none;
     border: solid 1px #1EDDB3;
     color: #0DB8DF;
+
+    &.-loading::after {
+      border-color: #0DB8DF;
+      border-right-color: transparent;
+      border-top-color: transparent;
+    }
+  }
+
+  &.-loading {
+    color: transparent!important;
+    pointer-events: none;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 1.5em;
+      width: 1.5em;
+      left: calc(50% - (1.5em / 2));
+      top: calc(50% - (1.5em / 2));
+      position: absolute;
+      border: 3px solid #fff;
+      border-radius: 290486px;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      animation: spinAround .5s infinite linear;
+    }
   }
 
   &:disabled {

@@ -10,6 +10,8 @@ import { EventService } from 'src/app/core/services';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
+  public isLoading: boolean = false;
+
   constructor(
     private dragonService: DragonService,
     private router: Router,
@@ -24,6 +26,7 @@ export class CreateComponent implements OnInit {
   }
 
   create(form: NgForm): void {
+    this.isLoading = true;
     this.dragonService.create(form.value)
       .then(() => {
         this.eventService.BroadcastEvent('LIST_DRAGONS');
@@ -31,7 +34,8 @@ export class CreateComponent implements OnInit {
       })
       .catch((error) => {
         console.log(error);
-      });
+      })
+      .finally(() => (this.isLoading = false));
   }
 
 }
