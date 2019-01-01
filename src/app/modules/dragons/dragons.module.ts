@@ -15,6 +15,7 @@ import { EditComponent } from './pages/edit/edit.component';
 import { UpdateSuccessComponent } from './pages/update-success/update-success.component';
 import { DeleteComponent } from './pages/delete/delete.component';
 import { DeleteSuccessComponent } from './pages/delete-success/delete-success.component';
+import { DragonScenarioComponent } from './components/dragon-scenario/dragon-scenario.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DeleteSuccessComponent } from './pages/delete-success/delete-success.co
     UpdateSuccessComponent,
     DeleteComponent,
     DeleteSuccessComponent,
+    DragonScenarioComponent,
   ],
   imports: [
     CommonModule,

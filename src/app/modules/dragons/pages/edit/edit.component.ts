@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { DragonService, EventService } from 'src/app/core/services';
 import { Dragon } from 'src/app/core/models';
-import { DragonUtil } from 'src/app/util';
 
 @Component({
   selector: 'app-edit',
@@ -15,7 +14,6 @@ export class EditComponent implements OnInit, OnDestroy {
   public dragon: Dragon;
   public isLoading: boolean;
   public isUpdating: boolean = false;
-  public level: string;
 
   constructor(
     private router: Router,
@@ -33,16 +31,8 @@ export class EditComponent implements OnInit, OnDestroy {
   private getDragon(slug: string) {
     this.isLoading = true;
     this.dragonService.get(slug)
-      .then((dragon: Dragon) => {
-        this.dragon = dragon;
-        this.level = DragonUtil.getLevel(this.dragon.created_at);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        this.isLoading = false;
-      })
+      .then((dragon: Dragon) => (this.dragon = dragon))
+      .finally(() => (this.isLoading = false))
   }
 
   public back() {
@@ -55,9 +45,6 @@ export class EditComponent implements OnInit, OnDestroy {
       .then(() => {
         this.eventService.BroadcastEvent('LIST_DRAGONS');
         this.router.navigate([{ outlets: { action: 'update-success' } }]);
-      })
-      .catch((error) => {
-        console.log(error);
       })
       .finally(() => (this.isUpdating = true));
   }

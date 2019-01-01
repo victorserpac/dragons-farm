@@ -1,21 +1,5 @@
 .view {
   padding: 2rem 0;
-  
-  > .scenario {
-    position: relative;
-
-    > .habitat{
-      width: 100%;
-    }
-
-    > .dragon {
-      position: absolute;
-      width: 60px;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%, -100%, 0);
-    }
-  }
 
   > .form {
     position: relative;
