@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Dragon } from '../../../../core/models';
+import { DragonUtil } from 'src/app/util';
 
 @Component({
   selector: 'app-dragon',
@@ -7,6 +8,7 @@ import { Dragon } from '../../../../core/models';
   styleUrls: ['./dragon.component.scss']
 })
 export class DragonComponent implements OnInit {
+  public level: string;
   @Input() dragon: Dragon;
   @Output() onView = new EventEmitter();
   @Output() onEdit = new EventEmitter();
@@ -14,7 +16,7 @@ export class DragonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.dragon.created_at);
+    this.level = DragonUtil.getLevel(this.dragon.created_at);
   }
 
   view() {

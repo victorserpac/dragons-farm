@@ -1,8 +1,8 @@
 <app-modal (onClose)="back()" [title]="'Dados do dragão'">
-  <div class="view">
+  <div class="view" *ngIf="!isLoading">
     <div class="scenario">
       <img class="habitat" src="../../../../../assets/images/habitat.png">
-      <img class="dragon" src="../../../../../assets/images/dragon-level-2.png">
+      <img class="dragon" src="../../../../../assets/images/dragon-{{ level }}.png">
     </div>
     <div class="info">
       <div class="name">{{ dragon.name }}</div>
@@ -12,7 +12,7 @@
       </div>
       <div class="data">
         <div class="label">Data de cadastro</div>
-        27/12/2018
+        {{ dragon.created_at | date:'dd/MM/yyyy'}}
       </div>
     </div>
   </div>

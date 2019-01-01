@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { DragonService, EventService } from 'src/app/core/services';
 import { Dragon } from 'src/app/core/models';
+import { DragonUtil } from 'src/app/util';
 
 @Component({
   selector: 'app-edit',
@@ -11,8 +12,9 @@ import { Dragon } from 'src/app/core/models';
 })
 export class EditComponent implements OnInit, OnDestroy {
   private subscription;
-  private dragon: Dragon;
+  public dragon: Dragon;
   public isLoading: boolean;
+  public level: string;
 
   constructor(
     private router: Router,
@@ -30,7 +32,10 @@ export class EditComponent implements OnInit, OnDestroy {
   private getDragon(slug: string) {
     this.isLoading = true;
     this.dragonService.get(slug)
-      .then((dragon: Dragon) => (this.dragon = dragon))
+      .then((dragon: Dragon) => {
+        this.dragon = dragon;
+        this.level = DragonUtil.getLevel(this.dragon.created_at);
+      })
       .catch((error) => {
         console.log(error);
       })
