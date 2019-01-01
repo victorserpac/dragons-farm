@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
 
 import { AuthRoutes } from './auth.routes';
-
 import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({

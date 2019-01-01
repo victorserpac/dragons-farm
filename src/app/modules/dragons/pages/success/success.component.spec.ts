@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UpdateSuccessComponent } from './update-success.component';
+import { SuccessComponent } from './success.component';
 
-describe('UpdateSuccessComponent', () => {
-  let component: UpdateSuccessComponent;
-  let fixture: ComponentFixture<UpdateSuccessComponent>;
+describe('SuccessComponent', () => {
+  let component: SuccessComponent;
+  let fixture: ComponentFixture<SuccessComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UpdateSuccessComponent ]
+      declarations: [ SuccessComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UpdateSuccessComponent);
+    fixture = TestBed.createComponent(SuccessComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -10,9 +10,9 @@ import { Dragon } from 'src/app/core/models';
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit, OnDestroy {
-  private subscription;
+  private subscription: any;
   public dragon: Dragon;
-  public isLoading: boolean;
+  public isLoading: boolean = false;
   public isUpdating: boolean = false;
 
   constructor(
@@ -28,18 +28,18 @@ export class EditComponent implements OnInit, OnDestroy {
     });
   }
 
-  private getDragon(slug: string) {
+  private getDragon(slug: string): void {
     this.isLoading = true;
     this.dragonService.get(slug)
       .then((dragon: Dragon) => (this.dragon = dragon))
       .finally(() => (this.isLoading = false))
   }
 
-  public back() {
+  public back(): void {
     this.router.navigateByUrl('timeline');
   }
 
-  public update() {
+  public update(): void {
     this.isUpdating = true;
     this.dragonService.update(this.dragon)
       .then(() => {

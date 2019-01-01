@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { DragonService } from 'src/app/core/services/dragon.service';
 import { EventService } from 'src/app/core/services';
 
@@ -9,7 +10,7 @@ import { EventService } from 'src/app/core/services';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss']
 })
-export class CreateComponent implements OnInit {
+export class CreateComponent {
   public isLoading: boolean = false;
 
   constructor(
@@ -18,22 +19,16 @@ export class CreateComponent implements OnInit {
     private eventService: EventService,
   ) { }
 
-  ngOnInit() {
-  }
-
-  back() {
+  public back(): void {
     this.router.navigate([{ outlets: { action: null } }]);
   }
 
-  create(form: NgForm): void {
+  public create(form: NgForm): void {
     this.isLoading = true;
     this.dragonService.create(form.value)
       .then(() => {
         this.eventService.BroadcastEvent('LIST_DRAGONS');
         this.router.navigate([{ outlets: { action: 'create-success' } }]);
-      })
-      .catch((error) => {
-        console.log(error);
       })
       .finally(() => (this.isLoading = false));
   }

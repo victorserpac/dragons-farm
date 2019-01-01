@@ -11,7 +11,7 @@ import { Dragon } from 'src/app/core/models';
 })
 export class ViewComponent implements OnInit, OnDestroy {
   public isLoading: boolean = false;
-  private subscription;
+  private subscription: any;
   public dragon: Dragon;
 
   constructor(
@@ -26,14 +26,14 @@ export class ViewComponent implements OnInit, OnDestroy {
     });
   }
 
-  private getDragon(slug: string) {
+  private getDragon(slug: string): void {
     this.isLoading = true;
     this.dragonService.get(slug)
       .then((dragon: Dragon) => (this.dragon = dragon))
       .finally(() => (this.isLoading = false));
   }
 
-  public back() {
+  public back(): void {
     this.router.navigateByUrl('timeline');
   }
 

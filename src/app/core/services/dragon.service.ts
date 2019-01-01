@@ -9,7 +9,7 @@ import { ApiDragonsList, NewDragon, Dragon } from '../models';
 export class DragonService {
   private url: string = 'https://dragons-api.herokuapp.com/api/dragons';
 
-  public list(page: number = 0) {
+  public list(page: number = 0): Promise<ApiDragonsList> {
     const config = {
       params: {
         page,
@@ -36,19 +36,19 @@ export class DragonService {
       }));
   }
 
-  public create(dragon: NewDragon) {
+  public create(dragon: NewDragon): Promise<Dragon> {
     return axios.post(this.url, dragon).then(({ data }) => data);
   }
 
-  public get(slug: string) {
+  public get(slug: string): Promise<Dragon> {
     return axios.get(`${this.url}/${slug}`).then(({ data }) => data);
   }
 
-  public update(dragon: Dragon) {
+  public update(dragon: Dragon): Promise<any> {
     return axios.put(`${this.url}/${dragon.slug}`, dragon);
   }
 
-  public delete(slug: string) {
+  public delete(slug: string): Promise<any> {
     return axios.delete(`${this.url}/${slug}`);
   }
 }

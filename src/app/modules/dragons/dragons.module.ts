@@ -9,26 +9,23 @@ import { DragonsRoutes } from './dragons.routes';
 import { TimelineComponent } from './pages/timeline/timeline.component';
 import { DragonComponent } from './components/dragon/dragon.component';
 import { CreateComponent } from './pages/create/create.component';
-import { CreateSuccessComponent } from './pages/create-success/create-success.component';
 import { ViewComponent } from './pages/view/view.component';
 import { EditComponent } from './pages/edit/edit.component';
-import { UpdateSuccessComponent } from './pages/update-success/update-success.component';
 import { DeleteComponent } from './pages/delete/delete.component';
-import { DeleteSuccessComponent } from './pages/delete-success/delete-success.component';
 import { DragonScenarioComponent } from './components/dragon-scenario/dragon-scenario.component';
+import { SuccessComponent } from './pages/success/success.component';
+import { DragonsResolver } from './dragons.resolver';
 
 @NgModule({
   declarations: [
     TimelineComponent,
     DragonComponent,
-    CreateComponent,
-    CreateSuccessComponent,
+    CreateComponent,    
     ViewComponent,
     EditComponent,
-    UpdateSuccessComponent,
     DeleteComponent,
-    DeleteSuccessComponent,
     DragonScenarioComponent,
+    SuccessComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +36,7 @@ import { DragonScenarioComponent } from './components/dragon-scenario/dragon-sce
   ],
   providers: [
     AuthGuard,
+    DragonsResolver,
   ]
 })
 export class DragonsModule { }

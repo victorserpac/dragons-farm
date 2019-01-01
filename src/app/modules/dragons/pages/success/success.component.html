@@ -1,0 +1,8 @@
+<app-modal (onClose)="back()">
+  <div class="success">
+    <svg icon type="success" class="icon"></svg>
+    <p *ngIf="isCreate" class="description">Dragão cadastrado com <span class="highlight">Sucesso</span>!</p>
+    <p *ngIf="isDelete" class="description">Dragão excluído com <span class="highlight">Sucesso</span>!</p>
+    <p *ngIf="isUpdate" class="description">Dados do dragão editados com <span class="highlight">Sucesso</span>!</p>
+  </div>
+</app-modal>

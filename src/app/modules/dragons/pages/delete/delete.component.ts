@@ -9,7 +9,7 @@ import { DragonService, EventService } from 'src/app/core/services';
   styleUrls: ['./delete.component.scss']
 })
 export class DeleteComponent implements OnInit, OnDestroy {
-  private subscription;
+  private subscription: any;
   private slug: string;
   public isLoading: boolean = false;
 
@@ -30,7 +30,7 @@ export class DeleteComponent implements OnInit, OnDestroy {
     this.router.navigate([{ outlets: { action: ['edit', this.slug] } }])
   }
 
-  public back() {
+  public back(): void {
     this.router.navigateByUrl('timeline');
   }
 
@@ -40,9 +40,6 @@ export class DeleteComponent implements OnInit, OnDestroy {
       .then(() => {
         this.eventService.BroadcastEvent('LIST_DRAGONS');
         this.router.navigate([{ outlets: { action: 'delete-success' } }]);
-      })
-      .catch((error) => {
-        console.log(error);
       })
       .finally(() => (this.isLoading = false));
   }

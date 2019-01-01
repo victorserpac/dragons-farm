@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { User } from '../models';
 
 const LOCALSTORAGE_TOKEN_KEY = 'Authorization';
@@ -17,11 +18,11 @@ export class AuthService {
     return !!localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
   }  
 
-  setToken(token: string): void {
+  private setToken(token: string): void {
     localStorage.setItem(LOCALSTORAGE_TOKEN_KEY, token);
   }
 
-  login(user: User): Promise<object> {
+  public login(user: User): Promise<object> {
     if (user.email === LOGIN.email && user.password === LOGIN.password) {
       this.setToken(TOKEN);
       
@@ -36,7 +37,7 @@ export class AuthService {
     });
   }
 
-  logout(): void {
+  public logout(): void {
     localStorage.removeItem(LOCALSTORAGE_TOKEN_KEY);
   }
 }

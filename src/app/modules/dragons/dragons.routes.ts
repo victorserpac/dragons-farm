@@ -4,12 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from 'src/app/core/guards';
 import { TimelineComponent } from './pages/timeline/timeline.component';
 import { CreateComponent } from './pages/create/create.component';
-import { CreateSuccessComponent } from './pages/create-success/create-success.component';
 import { ViewComponent } from './pages/view/view.component';
 import { EditComponent } from './pages/edit/edit.component';
-import { UpdateSuccessComponent } from './pages/update-success/update-success.component';
 import { DeleteComponent } from './pages/delete/delete.component';
-import { DeleteSuccessComponent } from './pages/delete-success/delete-success.component';
+import { SuccessComponent } from './pages/success/success.component';
+import { DragonsResolver } from './dragons.resolver';
 
 const routes: Routes = [
   {
@@ -25,9 +24,12 @@ const routes: Routes = [
   },
   {
     path: 'create-success',
-    component: CreateSuccessComponent,
+    component: SuccessComponent,
     outlet: 'action',
     canActivate: [AuthGuard],
+    resolve: {
+      isCreate: DragonsResolver,
+    },
   },
   {
     path: 'view/:slug',
@@ -43,9 +45,12 @@ const routes: Routes = [
   },
   {
     path: 'update-success',
-    component: UpdateSuccessComponent,
+    component: SuccessComponent,
     outlet: 'action',
     canActivate: [AuthGuard],
+    resolve: {
+      isUpdate: DragonsResolver,
+    },
   },
   {
     path: 'delete/:slug',
@@ -55,9 +60,12 @@ const routes: Routes = [
   },
   {
     path: 'delete-success',
-    component: DeleteSuccessComponent,
+    component: SuccessComponent,
     outlet: 'action',
     canActivate: [AuthGuard],
+    resolve: {
+      isDelete: DragonsResolver,
+    },
   },
 ];
 

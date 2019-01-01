@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { filter, map } from "rxjs/operators";
+import { filter, map } from 'rxjs/operators';
 
-interface Event {
-  key: string;
-  value: any;
-}
+import { Event } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventService {
-  protected _eventsSubject = new Subject<Event>();
+  protected _eventsSubject: Subject<Event> = new Subject<Event>();
 
-  public BroadcastEvent(key: string, value: any = undefined) {
+  public BroadcastEvent(key: string, value: any = undefined): void {
     this._eventsSubject.next({ key, value });
   }
 

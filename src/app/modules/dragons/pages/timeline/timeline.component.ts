@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { DragonService } from 'src/app/core/services/dragon.service';
 import { ApiDragonsList, Dragon } from 'src/app/core/models';
 import { EventService } from 'src/app/core/services';
@@ -10,7 +11,7 @@ import { EventService } from 'src/app/core/services';
   styleUrls: ['./timeline.component.scss']
 })
 export class TimelineComponent implements OnInit {
-  public dragons: Array<Dragon> = [];  
+  public dragons: Array<Dragon> = [];
   public isLoading: boolean = false;
 
   constructor(
@@ -26,25 +27,22 @@ export class TimelineComponent implements OnInit {
     });
   }
 
-  listDragons(page: number = undefined): void {
+  private listDragons(page: number = undefined): void {
     this.isLoading = true;
     this.dragonService.list(page)
-      .then((response: ApiDragonsList) => {
-        this.dragons = response.items;
-      })
+      .then((response: ApiDragonsList) => (this.dragons = response.items))
       .finally(() => (this.isLoading = false))
   }
 
-  newDragon() {
+  public newDragon(): void {
     this.router.navigate([{ outlets: { action: 'create' } }])
-    console.log('new dragon');
   }
 
-  view(slug: string) {
+  public view(slug: string): void {
     this.router.navigate([{ outlets: { action: ['view', slug] } }])
   }
 
-  edit(slug: string) {
+  public edit(slug: string): void {
     this.router.navigate([{ outlets: { action: ['edit', slug] } }])
   }
 

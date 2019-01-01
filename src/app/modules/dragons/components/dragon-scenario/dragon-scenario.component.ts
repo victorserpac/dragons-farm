@@ -6,8 +6,9 @@ import { DragonUtil } from 'src/app/util';
   templateUrl: './dragon-scenario.component.html',
   styleUrls: ['./dragon-scenario.component.scss']
 })
-export class DragonScenarioComponent implements OnInit{
+export class DragonScenarioComponent implements OnInit {
   public level: string;
+
   @Input() createdAt: string;
 
   ngOnInit() {

@@ -9,11 +9,10 @@ import { DragonUtil } from 'src/app/util';
 })
 export class DragonComponent implements OnInit {
   public level: string;
+
   @Input() dragon: Dragon;
   @Output() onView = new EventEmitter();
   @Output() onEdit = new EventEmitter();
-
-  constructor() { }
 
   ngOnInit() {
     this.level = DragonUtil.getLevel(this.dragon.created_at);

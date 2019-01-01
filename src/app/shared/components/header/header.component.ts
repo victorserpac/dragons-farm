@@ -1,13 +1,14 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { AuthService } from '../../../core/services/auth.service';
 import { Router } from '@angular/router';
+
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent{
+export class HeaderComponent {
   @Output() onCreate = new EventEmitter();
 
   constructor(
