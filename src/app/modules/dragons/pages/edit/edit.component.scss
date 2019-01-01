@@ -28,6 +28,10 @@
     padding-bottom: 1.5rem;
     box-shadow: 0 11px 36px 0 rgba(95, 95, 95, 0.16);
 
+    @media (max-width: 470px) {
+      margin: 0;
+      margin-top: -20%;
+    }
 
     > .action {
       display: flex;

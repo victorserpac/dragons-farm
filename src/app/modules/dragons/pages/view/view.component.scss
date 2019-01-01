@@ -33,6 +33,11 @@
     flex-wrap: wrap;
     font-family: 'SF Pro Text', sans-serif;
 
+    @media (max-width: 470px) {
+      width: inherit;
+      margin-top: -20%;
+    }
+
     > .name {
       font-weight: 600;
       font-size: 1.5rem;

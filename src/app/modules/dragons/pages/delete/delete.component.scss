@@ -5,6 +5,9 @@
   align-items: center;
   padding: 2rem 2rem 1rem;
 
+  @media (max-width: 450px) {
+    padding: 2rem 0 1rem;
+  }
 
   > .icon {
     width: 100px;

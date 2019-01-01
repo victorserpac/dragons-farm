@@ -18,6 +18,7 @@
     right: 0;
     top: 0;
     background-color: rgba(10,10,10,.86);
+    padding: 20px;
   }
 
   > .content {
@@ -32,6 +33,11 @@
     display: block;
     padding: 1.5rem 2rem;
     overflow: scroll;
+
+    @media (max-width: 470px) {
+      width: calc(100% - 40px);
+      min-width: inherit;
+    }
 
     > .title {
       font-family: 'SF Pro Text', sans-serif;
