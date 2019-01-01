@@ -53,11 +53,21 @@
       height: 28px;
       border: solid 2px #11C0D6;
       border-radius: 50%;
-      background: 0;
+      background: none;
       outline: 0;
       position: absolute;
       top: 1rem;
       right: 1rem;
+      transition: background .3s ease;
+
+      &:hover {
+        background: #11C0D6;
+
+        &::before,
+        &::after {
+          background: #fff;
+        }
+      }
 
       &::before,
       &::after {
@@ -70,6 +80,7 @@
         height: 3px;
         border-radius: 2px;
         background: #37d7c9;
+        transition: background .3s ease;
       }
 
       &::before {
