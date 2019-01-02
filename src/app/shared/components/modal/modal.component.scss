@@ -24,7 +24,10 @@
   > .content {
     overflow-y: scroll;
     z-index: 2;
+    width: 100%;
     position: relative;
+    box-sizing: content-box;
+    padding: 0 40px;
 
     > .card {
       margin: 0 auto;
@@ -37,6 +40,7 @@
       display: block;
       padding: 1.5rem 2rem;
       overflow: hidden;
+      box-sizing: border-box;
   
       @media (max-width: 470px) {
         width: calc(100% - 40px);
