@@ -9,19 +9,19 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @Output() onCreate = new EventEmitter();
+  @Output() onCreate: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private authService: AuthService,
     private router: Router,
   ) {}
 
-  logout(): void {
+  public logout(): void {
     this.authService.logout();
     this.router.navigateByUrl('');
   }
 
-  create(): void {
+  public create(): void {
     this.onCreate.emit();
   }
 }

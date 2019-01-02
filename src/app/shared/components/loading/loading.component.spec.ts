@@ -1,25 +1,23 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { LoadingComponent } from './loading.component';
 
 describe('LoadingComponent', () => {
   let component: LoadingComponent;
-  let fixture: ComponentFixture<LoadingComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ LoadingComponent ]
-    })
-    .compileComponents();
-  }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoadingComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({
+      providers: [
+        LoadingComponent,
+      ],
+    });
+
+    component = TestBed.get(LoadingComponent);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('initial component state', () => {
+    it('should be defined', () => {
+      expect(component).toBeDefined();
+    });
   });
 });
