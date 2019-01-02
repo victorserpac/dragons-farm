@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { LoginComponent } from './login.component';
 import { AuthService } from 'src/app/core/services';
 
-fdescribe('AppComponent', () => {
+describe('LoginComponent', () => {
   let component: LoginComponent;
   let routerSpy: jasmine.SpyObj<Router>;
   let authServiceSpy: jasmine.SpyObj<AuthService>;
