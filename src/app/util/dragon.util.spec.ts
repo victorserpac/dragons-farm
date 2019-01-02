@@ -2,7 +2,7 @@ import MockDate from 'mockdate';
 
 import { DragonUtil } from './dragon.util';
 
-fdescribe('DragonUtil', () => {
+describe('DragonUtil', () => {
   describe('initial util state', () => {
     it('should be created', () => {
       expect(DragonUtil).toBeDefined();
