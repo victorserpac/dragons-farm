@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public submit(login: NgForm): void {
-    this.authService.login(login.value)
+  public submit(login: NgForm): Promise<any> {
+    return this.authService.login(login.value)
       .then(this.onLoginSuccess.bind(this))
       .catch(this.onloginError.bind(this))
   }
