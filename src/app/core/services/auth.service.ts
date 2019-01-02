@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { User } from '../models';
 
-const LOCALSTORAGE_TOKEN_KEY = 'Authorization';
-const TOKEN = 'EXAMPLETOKEN';
+export const LOCALSTORAGE_TOKEN_KEY = 'Authorization';
+export const TOKEN = 'EXAMPLETOKEN';
 const LOGIN = {
   email: 'admin@dragons.com',
   password: '123456',
