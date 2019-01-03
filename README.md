@@ -1,6 +1,7 @@
 # DragonsFarm
 
 Dragons farms is an Angular application witch consumes an dragon API to raise your litle monsters in a beautiful place.
+The main inspiration for the application structure comes from this [Article](https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7)
 
 ## Getting Started
 
