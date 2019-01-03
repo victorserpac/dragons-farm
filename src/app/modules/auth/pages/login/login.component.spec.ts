@@ -60,7 +60,7 @@ describe('LoginComponent', () => {
   });
 
   describe('submit()', () => {
-    const form = { value: 'FOOBAR', submitted: false };
+    const form = { value: 'FOOBAR' };
 
     it('should call login from auth service with form value', () => {
       authServiceSpy.login.and.returnValue(Promise.resolve());
