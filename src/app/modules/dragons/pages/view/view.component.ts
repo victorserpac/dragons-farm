@@ -26,9 +26,9 @@ export class ViewComponent implements OnInit, OnDestroy {
     });
   }
 
-  private getDragon(slug: string): void {
+  public getDragon(slug: string): Promise<any> {
     this.isLoading = true;
-    this.dragonService.get(slug)
+    return this.dragonService.get(slug)
       .then((dragon: Dragon) => (this.dragon = dragon))
       .finally(() => (this.isLoading = false));
   }

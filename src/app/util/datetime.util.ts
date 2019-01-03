@@ -1,7 +1,7 @@
 import { differenceInHours } from 'date-fns';
 
 export class DatetimeUtil {
-  static differenceInHoursFromToday(date: string) {
+  static differenceInHoursFromNow(date: string) {
     return differenceInHours(
       new Date(),
       new Date(date),

@@ -18,11 +18,11 @@ export class DragonComponent implements OnInit {
     this.level = DragonUtil.getLevel(this.dragon.created_at);
   }
 
-  view() {
+  public view(): void {
     this.onView.emit(this.dragon.slug);
   }
 
-  edit() {
+  public edit(): void {
     this.onEdit.emit(this.dragon.slug);
   }
 }

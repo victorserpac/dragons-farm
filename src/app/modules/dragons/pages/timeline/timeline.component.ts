@@ -27,9 +27,9 @@ export class TimelineComponent implements OnInit {
     });
   }
 
-  private listDragons(page: number = undefined): void {
+  public listDragons(page: number = undefined): Promise<any> {
     this.isLoading = true;
-    this.dragonService.list(page)
+    return this.dragonService.list(page)
       .then((response: ApiDragonsList) => (this.dragons = response.items))
       .finally(() => (this.isLoading = false))
   }

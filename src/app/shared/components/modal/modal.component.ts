@@ -7,7 +7,7 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 })
 export class ModalComponent {
   @Input() title: string;
-  @Output() onClose = new EventEmitter();
+  @Output() onClose: EventEmitter<any> = new EventEmitter();
 
   public close(): void {
     this.onClose.emit();

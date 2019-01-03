@@ -28,9 +28,9 @@ export class EditComponent implements OnInit, OnDestroy {
     });
   }
 
-  private getDragon(slug: string): void {
+  public getDragon(slug: string): Promise<any> {
     this.isLoading = true;
-    this.dragonService.get(slug)
+    return this.dragonService.get(slug)
       .then((dragon: Dragon) => (this.dragon = dragon))
       .finally(() => (this.isLoading = false))
   }
@@ -39,14 +39,14 @@ export class EditComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('timeline');
   }
 
-  public update(): void {
+  public update(): Promise<any> {
     this.isUpdating = true;
-    this.dragonService.update(this.dragon)
+    return this.dragonService.update(this.dragon)
       .then(() => {
         this.eventService.BroadcastEvent('LIST_DRAGONS');
         this.router.navigate([{ outlets: { action: 'update-success' } }]);
       })
-      .finally(() => (this.isUpdating = true));
+      .finally(() => (this.isUpdating = false));
   }
 
   public delete(slug: string): void {

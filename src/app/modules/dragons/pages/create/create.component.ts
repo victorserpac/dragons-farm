@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { DragonService } from 'src/app/core/services/dragon.service';
@@ -23,9 +22,9 @@ export class CreateComponent {
     this.router.navigate([{ outlets: { action: null } }]);
   }
 
-  public create(form: NgForm): void {
+  public create(form: any): Promise<any> {
     this.isLoading = true;
-    this.dragonService.create(form.value)
+    return this.dragonService.create(form.value)
       .then(() => {
         this.eventService.BroadcastEvent('LIST_DRAGONS');
         this.router.navigate([{ outlets: { action: 'create-success' } }]);

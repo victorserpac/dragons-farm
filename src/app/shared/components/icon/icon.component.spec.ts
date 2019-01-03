@@ -1,25 +1,23 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { IconComponent } from './icon.component';
 
 describe('IconComponent', () => {
   let component: IconComponent;
-  let fixture: ComponentFixture<IconComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ IconComponent ]
-    })
-    .compileComponents();
-  }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IconComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({
+      providers: [
+        IconComponent,
+      ],
+    });
+
+    component = TestBed.get(IconComponent);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('initial component state', () => {
+    it('should be defined', () => {
+      expect(component).toBeDefined();
+    });
   });
 });

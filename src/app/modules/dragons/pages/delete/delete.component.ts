@@ -10,7 +10,7 @@ import { DragonService, EventService } from 'src/app/core/services';
 })
 export class DeleteComponent implements OnInit, OnDestroy {
   private subscription: any;
-  private slug: string;
+  public slug: string;
   public isLoading: boolean = false;
 
   constructor(
@@ -34,9 +34,9 @@ export class DeleteComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('timeline');
   }
 
-  public confirm(): void {
+  public confirm(): Promise<any> {
     this.isLoading = true;
-    this.dragonService.delete(this.slug)
+    return this.dragonService.delete(this.slug)
       .then(() => {
         this.eventService.BroadcastEvent('LIST_DRAGONS');
         this.router.navigate([{ outlets: { action: 'delete-success' } }]);
